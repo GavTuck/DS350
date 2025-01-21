@@ -1,0 +1,45 @@
+---
+title: "Visualizing Large Distributions"
+author: "Gavin Tucker"
+execute:
+  keep-md: true
+  warning: false
+format: 
+  html:
+    code-fold: true
+    code-line-numbers: true
+editor: visual
+editor_options:
+  chunk_output_type: console
+---
+
+```{r}
+library(tidyverse)
+library(nycflights13)
+```
+
+```{r}
+ggplot(data = flights, mapping = aes(x = distance, y = dep_delay,)) + geom_point()
+```
+
+```{r}
+ggplot(data = flights, mapping = aes(x = carrier, y = dep_delay,)) + geom_point()
+```
+
+```{r}
+
+ggplot(data = flights, mapping = aes(x = distance, y = dep_delay, color= carrier )) + geom_point()
+
+```
+
+```{r}
+glimpse(flights)
+
+flights %>% head()
+```
+
+##What variable I decided to look at separately was distance and carrier. The way that I saw how they correlated was by using dep_dalays. What I saw with department delays was that on average the delays were in a range of distance of 20 to 260 with an outlier of 5000 miles. The carrier that had the longest delay was HA(Houston?) and the airline with the most outliers is MQ(I don't know this code)##
+
+\
+
+##As we compared these variables using color we were able to see a different picture. We could see that the highest department delay within distance is AA. But all of the extreme distance out liars come from a specific carrier which is OO, MQ and HA. However most of the data points are so close together that it is hard to differentiate##
