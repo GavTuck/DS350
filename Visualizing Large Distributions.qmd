@@ -1,0 +1,35 @@
+---
+title: "Visualizing Large Distributions"
+author: "Gavin Tucker"
+execute:
+  keep-md: true
+  warning: false
+format: 
+  html:
+    code-fold: true
+    code-line-numbers: true
+editor: visual
+editor_options:
+  chunk_output_type: console
+---
+
+```{r}
+library(gapminder)
+library(tidyverse)
+
+```
+
+```{r}
+ggplot(data = gapminder, mapping = aes(x = , y = dep_delay,)) + geom_point()
+```
+
+```{r}
+install.packages('tidyverse')
+install.packages('nycflights13')
+```
+
+```{r}
+glimpse(gapminder)
+
+gapminder %>% head()
+```

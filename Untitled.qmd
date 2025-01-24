@@ -1,0 +1,40 @@
+---
+title: "Untitled"
+author: "Gavin Tucker"
+execute: 
+  
+  keep-md:true
+  warning: false
+format: html
+  code-fold: true
+  code-line-numbers: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+install.packages('tidyverse')
+install.packages('nycflights13')
+```
+
+```{r}
+library(tidyverse)
+library(nycflights13)
+```
+
+```{r}
+glimpse(flights)
+
+flights %>% head()
+```
+
+
+# Our First Graph
+```{r}
+ggplot(data = flights, mapping = aes(x = dep_time, y = dep_delay,)) + geom_point()
+```
+
+# iris
+```{r}
+ggplot(data = iris, mapping = aes(x= Sepal.Length, y = Petal.Length, color = Species)) + geom_point() + geom_smooth(method = "lm") 
+```
